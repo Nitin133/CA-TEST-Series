@@ -1,0 +1,16 @@
+function totalUp()
+{var x=0,y=0;x+=parseInt(document.getElementById('Test_TotalVal').innerHTML);y+=parseInt(document.getElementById('Test_PromoVal').innerHTML);document.getElementById('Pay_TotalVal').innerHTML=x-y;}
+$(document).ready(function(){var value=$('#Mail').val();$.ajax({url:'May/getItems.php',method:'POST',data:{"Mail":value,"Method2":2},dataType:"JSON",success:function(data){$('#Packages_TS').html(data.Data1);$('#Test_TotalVal').html(data.Data5);$('#Test_PromoVal').html(0);totalUp();}});$('#CheckOutButton1').on('click',function(){var Total=$('#Test_TotalVal').text()+"@@@";var Promo=$('#Test_PromoVal').text()+"@@@";var Code=$('#PromoCode_TS').val()+"@@@";var Mail=$('#Mail').val();var Pay=parseInt($('#Pay_TotalVal').text());if(Total==""||Pay=="")
+{}
+else
+{$.ajax({url:'May/CreateOrder.php',method:'POST',dataType:'JSON',data:{"Total":Total,"Promo":Promo,"Code":Code,"Pay":Pay,"Mail":Mail},success:function(data){if(data.Status==1)
+{window.location.assign(data.URL);}
+else
+{alert(data.Message);}}});}});});$(document).on('click','.btn-white',function(){var x=confirm("Do you want to Delete ?");if(x==true)
+{var getID=$(this).val();var value=$('#Mail').val();$.ajax({url:'May/getItems.php',method:'POST',data:{"Mail":value,"ID":getID,"Method1":1},dataType:"JSON",success:function(data){$('#Packages_TS').html(data.Data1);$('#Test_TotalVal').html(data.Data2);$('#Test_PromoVal').html("0");$("#PromoCode_TS").prop("readonly",false);$("#PromoApply_TS").css({"display":"block"});$('#PromoRemove_TS').css({"display":"none"});totalUp();}});}});$(document).on('click','#PromoApply_TS',function(){var Code=$('#PromoCode_TS').val();if(Code!="")
+{var Value1=$('#Test_TotalVal').text();var Mail=$('#Mail').val();$.ajax({url:"May/getPromo.php",method:"POST",data:{"Promo":Code,"Total":Value1,"Mail":Mail,"Method":1},dataType:"JSON",success:function(data){if(data.Status==1)
+{$('#Test_PromoVal').html(data.Promo);$('#PromoMessage_TS').css({"display":"block"});$('#PromoMessage_TS').html(data.Msg);$("#PromoCode_TS").prop("readonly",true);$("#PromoApply_TS").css({"display":"none"});$('#PromoRemove_TS').css({"display":"block"});totalUp();}
+else
+{$('#PromoMessage_TS').css({"display":"block"});$('#PromoMessage_TS').html(data.Msg);}}});}
+else
+{alert("Please Enter Promo Code");}});$(document).on("click","#PromoRemove_TS",function(){$("#PromoCode_TS").prop("readonly",false);$("#PromoApply_TS").css({"display":"block"});$('#PromoRemove_TS').css({"display":"none"});$('#PromoMessage_TS').css({"display":"none"});$('#Test_PromoVal').html(0);totalUp();});
