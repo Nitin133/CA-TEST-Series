@@ -5,6 +5,11 @@ body {
     font-family: lato, sans-serif
 }
 
+.blog-img{
+    width:100%;
+    height:200px;
+}
+
 .header button {
     padding: 15px 10px;
     margin-top: 15px;
@@ -60,7 +65,7 @@ body {
 }
 
 #navbar {
-    background-color: black;
+    background-color: dodgerblue;
     border-color: #fff;
     margin-top: 5px;
     width: 100%
@@ -502,51 +507,29 @@ body {
 }
 
 .section9 {
-    position: relative;
     background-size: 100%;
-    padding-bottom: 50px;
-    padding-top: 50px;
-    background-color: #333
+    padding-bottom: 40px;
+    padding-top: 40px;
+    background-color: #333;
+    text-align: center
 }
 
 .section9 .footer-heading {
-    color: White;
+    color: deepskyblue;
     font-weight: 800;
-    font-size: 20px
-}
-
-.section9 .footer-body {
-    margin-top: 15px;
-    color: #fff
+    font-size: 30px;
 }
 
 .section9 i {
     color: #fff;
     font-weight: 800;
     font-size: 15px;
-    margin-right: 10px
 }
 
 .section9 a {
     color: #fff;
-    padding-left: 10px;
     font-size: 15px;
     font-weight: 600
-}
-
-.section9 a:hover {
-    text-decoration: none
-}
-
-.section9 .footer-body-heading1 {
-    font-size: 20px;
-    font-weight: 600
-}
-
-.section9 .footer-body-heading2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 25px
 }
 
 .payment-options div:hover,
@@ -695,9 +678,6 @@ body {
 }
 
 @media(max-width:767px) {
-    .section9 .footer-heading {
-        margin-top: 20px
-    }
     .nav-item:hover {
         border: 2px solid #f8334e
     }
