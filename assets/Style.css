@@ -505,34 +505,9 @@ body {
 .contact-section .contact-details a:hover {
     text-decoration: none
 }
-<<<<<<< HEAD
 
-.section9 {
-    background-size: 100%;
-    padding-bottom: 40px;
-    padding-top: 40px;
-    background-color: #333;
-    text-align: center
-}
 
-.section9 .footer-heading {
-    color: deepskyblue;
-    font-weight: 800;
-    font-size: 30px;
-}
 
-.section9 i {
-    color: #fff;
-    font-weight: 800;
-    font-size: 15px;
-}
-
-.section9 a {
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600
-}
-=======
 /*-------------footer---------*/
 html,
 body,
@@ -660,10 +635,9 @@ a {
 
 
 
->>>>>>> 59d7804a3e26ed7bb755f06a404ab8e7e573032f
 
 .payment-options div:hover,
-.social-connection div:hover  {
+.social-connection div:hover {
     -ms-transform: scale(1.2);
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
@@ -807,12 +781,6 @@ a {
     background: url(https://www.catestseries.org/Images/icons.png) -130px -240px
 }
 
-<<<<<<< HEAD
-@media(max-width:767px) {
-    .nav-item:hover {
-        border: 2px solid #f8334e
-    }
-=======
 
 /* Media Queries */
 
@@ -847,7 +815,6 @@ a {
     display: inline-block;
     float: left;
   }
->>>>>>> 59d7804a3e26ed7bb755f06a404ab8e7e573032f
 }
 @media (min-width:992px) {
   .ct-footer-post .inner-left {
